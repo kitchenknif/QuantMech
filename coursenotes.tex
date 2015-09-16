@@ -1,0 +1,54 @@
+\documentclass[english, 11pt]{article}
+\usepackage{notes}
+
+% Uncomment these for a different family of fonts
+% \usepackage{cmbright}
+% \renewcommand{\sfdefault}{cmss}
+% \renewcommand{\familydefault}{\sfdefault}
+
+%\newcommand{\thiscoursecode}{[XXXX] (\#\#\#)}
+\newcommand{\thiscoursename}{Quantum Mechanics}
+\newcommand{\thisprof}{Ivan Iorsh}
+\newcommand{\me}{Pavel Dmitriev}
+\newcommand{\thisterm}{Autumn 2015}
+%\newcommand{\website}{MYWEBSITE.COM}
+
+% Headers
+\chead{\thiscoursename \ Course Notes}
+\lhead{\thisterm}
+
+
+%%%%%% TITLE %%%%%%
+\newcommand{\notefront} {
+\pagenumbering{roman}
+\begin{center}
+
+%{\ttfamily \url{\website}} {\small}
+
+%\textbf{\Huge{\noun{\thiscoursecode}}}{\Huge \par}
+
+{\Huge{\noun{\thiscoursename}}}\\ \vspace{0.1in}
+
+  {\noun \thisprof} \ $\bullet$ \ {\noun \thisterm} \ $\bullet$ \ {\noun {ITMO University}} \\
+
+  \end{center}
+  }
+
+% Begin Document
+\begin{document}
+
+  % Notes front
+  \notefront
+  % Table of Contents and List of Figures
+  \tocandfigures
+  % Abstract
+  \doabstract{Quantum Mechanics Lecture Notes.}
+
+  \include{introduction}
+  \include{analytical}
+  \include{quasiclassical}  
+  \include{spin}    
+  \include{peturbation}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{document}
