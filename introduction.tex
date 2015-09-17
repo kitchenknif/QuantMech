@@ -1,9 +1,61 @@
 \section{Introduction}
-	\subsection{Schr\"odinger equation}
+	\subsection{Schr\"odinger formalism}
+	
+		\begin{equation}
+			\hat{f}\Phi =  E \Phi
+		\end{equation}
+	
+		\begin{equation}
+			\Phi \rightarrow dP = |\Phi|^2dq
+		\end{equation}
+		
+		\begin{equation}
+			x \leftrightarrow \hat{x}
+		\end{equation}
+
+		\begin{equation}
+			p_x \leftrightarrow -i\hbar \frac{\partial}{\partial x}
+		\end{equation}
+	
+		\begin{equation}
+			f \leftrightarrow \hat{f}
+		\end{equation}	
+		
+		\begin{equation}
+			\bar{f} = \flqq \int \hat{f}dp \quad\frqq = \int \Phi^* \hat{f} \Phi dq 
+		\end{equation}
 	
 	\subsection{Heisenberg formalism}
+		\epigraph{Schr\"odinger was good at math, which is why his quantum mechanics formalism is full of complex mathematical constructs. Heisenberg, on the other hand, had a lot of difficulty with math, which is why his matrix quantum mechanics formalism is limited almost exclusively to linear algebra constructs}{Roman ... }
+	
+		\begin{tabular}{c | c | c }
+			Name & Schr\"odinger & Heisenberg \\
+			\hline
+			\hline
+			\ &&\\
+			
+			 State Basis & Wave function of basis states $ \{ \Phi_n \} $ & Column vector of basis states $\begin{pmatrix}\phi_1\\...\\ \phi_n\end{pmatrix}$ \\[3ex]		
+			\hline
+			\hline
+			\ &&\\
+			
+			Observables & Operator $ \bar{f} = \int \Phi_n^* \hat{f} \Phi_m$ & Operator matrix $\begin{pmatrix}\phi_{11} & ... & \phi_{n1} \\ & ... & \\ \phi_{1n} & ... & \phi_{nn}\end{pmatrix}$ \\[3ex]
+			\hline
+			\hline
+			
+			\ &&\\
+			Shr\"odinger Equation & $ \hat{f}\Phi =  E \Phi$ & $\begin{pmatrix}\phi_{11} & ... & \phi_{n1} \\ & ... & \\ \phi_{1n} & ... & \phi_{nn}\end{pmatrix} \begin{pmatrix}\psi_1\\...\\ \psi_n\end{pmatrix} = \lambda \begin{pmatrix}\psi_1\\...\\ \psi_n\end{pmatrix}$ \\[3ex]
+			\hline
+			\hline			
+		\end{tabular}
+	
+		\subsubsection{Building an operator's matrix}
+		
 	
 	\subsection{Pauli uncertainty principle}
 		
 		\subsubsection{Black holes}
 		\subsubsection{Quantum Pencil}
+			\ref{easton2007quantum}
+		
+	\subsection{Problems}

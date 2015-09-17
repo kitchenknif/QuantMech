@@ -1,5 +1,9 @@
 \documentclass[english, 11pt]{article}
+
+%\usepackage[utf8]{inputenc}
 \usepackage{notes}
+\usepackage{epigraph}
+\usepackage{amsmath}
 
 % Uncomment these for a different family of fonts
 % \usepackage{cmbright}
@@ -20,35 +24,38 @@
 
 %%%%%% TITLE %%%%%%
 \newcommand{\notefront} {
-\pagenumbering{roman}
-\begin{center}
-
-%{\ttfamily \url{\website}} {\small}
-
-%\textbf{\Huge{\noun{\thiscoursecode}}}{\Huge \par}
-
-{\Huge{\noun{\thiscoursename}}}\\ \vspace{0.1in}
-
-  {\noun \thisprof} \ $\bullet$ \ {\noun \thisterm} \ $\bullet$ \ {\noun {ITMO University}} \\
-
-  \end{center}
-  }
+	\pagenumbering{roman}
+	\begin{center}
+	
+		%{\ttfamily \url{\website}} {\small}
+		
+		%\textbf{\Huge{\noun{\thiscoursecode}}}{\Huge \par}
+		
+		{\Huge{\noun{\thiscoursename}}}\\ \vspace{0.1in}
+		
+		{\noun \thisprof} \ $\bullet$ \ {\noun \thisterm} \ $\bullet$ \ {\noun {ITMO University}} \\
+	
+	\end{center}
+}
 
 % Begin Document
 \begin{document}
 
-  % Notes front
-  \notefront
-  % Table of Contents and List of Figures
-  \tocandfigures
-  % Abstract
-  \doabstract{Quantum Mechanics Lecture Notes.}
-
-  \include{introduction}
-  \include{analytical}
-  \include{quasiclassical}  
-  \include{spin}    
-  \include{peturbation}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \end{document}
+	% Notes front
+	\notefront
+	% Table of Contents and List of Figures
+	\tocandfigures
+	% Abstract
+	\doabstract{Quantum Mechanics Lecture Notes.}
+	
+	\include{introduction}
+	\include{analytical}
+	\include{quasiclassical}  
+	\include{spin}    
+	\include{peturbation}
+	\include{solutions}
+	
+	\bibliographystyle{ieeetr}
+	\bibliography{quantmechrefs}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
