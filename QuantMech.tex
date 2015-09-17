@@ -1,9 +1,7 @@
 \documentclass[english, 11pt]{article}
 
-%\usepackage[utf8]{inputenc}
 \usepackage{notes}
 \usepackage{epigraph}
-\usepackage{amsmath}
 
 % Uncomment these for a different family of fonts
 % \usepackage{cmbright}
@@ -55,7 +53,10 @@
 	\include{peturbation}
 	\include{solutions}
 	
+	\newpage
+	\phantomsection
+	\addcontentsline{toc}{section}{References}
 	\bibliographystyle{ieeetr}
-	\bibliography{quantmechrefs}
+	\bibliography{references}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

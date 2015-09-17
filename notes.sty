@@ -3,6 +3,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
+\usepackage{lmodern}
 \usepackage{geometry}
 \usepackage{url}
 \usepackage{amsthm}
@@ -63,39 +64,39 @@ urlcolor=black
 \addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
 
 \makeatother
-\usepackage{babel}
+
 
 \newcommand{\tocandfigures}{
-\rule[0.5ex]{1\columnwidth}{1pt}
-Last Revision: \today
-\noindent \begin{flushleft}
-\makeatletter
-\makeatother
-\setcounter{page}{1}
-\setcounter{secnumdepth}{0} %Hide section number in header
-\end{flushleft}
-\noindent \begin{flushleft}
-\tableofcontents{}
-\par\end{flushleft}
-\noindent \begin{flushleft}
-\rule[0.5ex]{1\columnwidth}{1pt}
-\par\end{flushleft}
-\noindent \begin{flushleft}
-\newpage{}
-\par\end{flushleft}
+	\rule[0.5ex]{1\columnwidth}{1pt}
+	Last Revision: \today
+	\noindent \begin{flushleft}
+	\makeatletter
+	\makeatother
+	\setcounter{page}{1}
+	\setcounter{secnumdepth}{0} %Hide section number in header
+	\end{flushleft}
+	\noindent \begin{flushleft}
+	\tableofcontents{}
+	\par\end{flushleft}
+	\noindent \begin{flushleft}
+	\rule[0.5ex]{1\columnwidth}{1pt}
+	\par\end{flushleft}
+	\noindent \begin{flushleft}
+	\newpage{}
+	\par\end{flushleft}
 }
 \newcommand{\ub}[1]{\underbrace{#1}}
 \newcommand{\ubt}[2]{$\underbrace{\mbox{#1}}_{\mbox{#2}}$}
 \newcommand{\comb}[2]{{#1 \choose #2}}
 \newcommand{\doabstract}[1]{
-\sectionmark{Abstract}
-\begin{abstract}
-\noindent
-#1
-\end{abstract}
-\setcounter{secnumdepth}{2}
-\setcounter{page}{2}
-\pagenumbering{arabic}
+	\sectionmark{Abstract}
+	\begin{abstract}
+	\noindent
+	#1
+	\end{abstract}
+	\setcounter{secnumdepth}{2}
+	\setcounter{page}{2}
+	\pagenumbering{arabic}
 }
 
 \newcommand{\piecewise}[4]{\left\{
