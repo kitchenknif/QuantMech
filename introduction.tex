@@ -50,10 +50,107 @@
 		\end{tabular}
 	
 		\subsubsection{Building an operator's matrix}
+			For a system with a discrete state basis, $\{\Psi_n \}$, any state of the system can be described as a linear combination of the basis' wave functions:
+			
+			\begin{equation}
+				\Psi = \sum_{n}a_n\Psi_n
+			\end{equation}
+			
+			Observable $\bar{f}$  for such a wave function can be decomposed into a sum over the basis state wave functions:
+			
+			\begin{align}
+				\bar{f} = & \int \Psi^* \hat{f} \Psi dq = \int \sum_{n}a_n^*\Psi_n^* \hat{f} \sum_{m}a_m\Psi_m dq \nonumber \\ 
+				=  &\sum_{n}\sum_{m}a_n^* a_m \int \Psi_n^* \hat{f} \Psi_m dq = \sum_{n}\sum_{m}a_n^* a_m f_{nm}(t) \nonumber \\
+				=  &\sum_{n}\sum_{m}a_n^* f_{nm}(t) a_m
+			\end{align}
+			
+			Where $f_{nm}$ is the operator matrix.
+			
+			\subsubsection{$f_nm(t)$ time dependence}
+				\hl{Move to appendix?}
+				
+				Solutions to the time-independent Shr\"odinger equation: 
+				\begin{align}
+					\hat{H}\Psi_n &= E_n \Psi_n \\
+					\Psi_n(t) &= e^{-\frac{i}{\hbar}E_n t} \Phi_n
+				\end{align}
+				
+				Which, in operator matrix terms translates into
+
+				\begin{align}
+					f_{nm}(t) &= \int \Psi_n^* \hat{f} \Psi_m dq = \int \Phi_n^* (e^{-\frac{i}{\hbar}E_n t})^* \hat{f} \Phi_m e^{-\frac{i}{\hbar}E_m t} dq \nonumber\\
+					&=  e^{+\frac{i}{\hbar}E_n t}e^{-\frac{i}{\hbar}E_m t} \int \Phi_n^*\hat{f} \Phi_m  dq = e^{i \frac{E_n-E_m}{\hbar} t} \int \Phi_n^*\hat{f} \Phi_m  dq \nonumber\\
+					&= f_{nm} e^{i \omega_{nm} t} 		
+				\end{align}
+				
+			\subsubsection{Operator matrix properties}
+				\begin{enumerate}
+					\item The operator matrix is hermitian \footnote{$H^\dag = H = (H^*)^T$}
+						Transposed operator:
+						\begin{equation}
+							(\int \Phi \hat{f} \Psi dq \quad)^T = \int \Psi (\hat{f})^T \Phi dq
+						\end{equation}
+						Complex conjugate:
+						\begin{equation}
+							(\hat{f})^* = \hat{f^*}
+						\end{equation}	
+						Hermitian conjugate:
+						\begin{equation}
+							\bar{f^*} = \int \Psi^* \hat{f}^\dag \Psi dq
+						\end{equation}
+						
+						In operator matrix terms:
+						\begin{align}
+							(f_{nm}^*) &= \int \varphi_n^* \hat{f}^\dag \varphi_m dq = \int \varphi_n^* (\hat{f}^*)^T \varphi_m dq \nonumber \\
+							&= \int \varphi_m (\hat{f}^* \varphi_n^*) dq = (\int \varphi_m^* \hat{f}^\dag \varphi_n dq )^* = (f_{mn})^*
+						\end{align}
+						Which means, if $f_{nm}$ is real, meaning $f_{nm}^* = f_{nm}$ that
+						\begin{equation}
+							f_{nm} = f_{mn}^* = f_{nm}^\dag
+						\end{equation}
+					\item The matrix' diagonal elements are time-independent and real
+						\begin{equation}
+							f_{nn} = \int \Psi_n \hat{f} \Psi_n dq \equiv \bar{f}_{n}
+						\end{equation}
+						
+						Where $\bar{f}_{n}$ is the value of observable $f$ in basis state $n$.
+						
+					\item The matrix of the product of two operators is the product of their matrices
+					
+						For operators $\hat{f}$ and $\hat{g}$, what is the operator matrix for operator $\hat{f}\times\hat{g}$ ~--- $(\hat{f}\times\hat{g})_{nm}$?
+
+						\hl{Move to appendix?}						
+						\begin{align}
+							\hat{f}\varphi_n &= \sum_m f_{mn} \varphi_m \\
+							\int \varphi_k^* dq \times \hat{f}\varphi_n &=  \int \varphi_k^* dq \times \sum_m f_{mn} \varphi_m \nonumber \\
+							\int \varphi_k^* \hat{f}\varphi_n dq &= \sum_m f_{mn} \int \varphi_k^* \varphi_m dq
+							f_{kn} = \sum_m f_{mn} \delta_{km} = f_{kn}
+						\end{align}
+						Because for state basis ${\varphi_n}$, $\varphi_n$ and $\varphi_m$ are orthogonal for all $m \not= n$.
+						
+						Using 1.18, we can write:
+						\begin{align}
+							\hat{f}\hat{g}\varphi_n &= \hat{f}(\hat{g}\varphi_n) = \hat{f} \sum_k g_kn \varphi_k = \sum_k g_{kn} \hat{f} \varphi_k \nonumber \\
+							&= \sum_k g_{kn} \sum_m f_{mk} \varphi_m = \sum_{k,m} g_{kn}f_{mk}\varphi_m \nonumber \\ 
+							&= \sum_{k,m} f_{mk}g_{kn}\varphi_m
+						\end{align}
+						And knowing that:
+						\begin{equation}
+							(\hat{f}\hat{g})\varphi_n = \sum_m(\hat{f}\hat{g})_{nm}\varphi_m
+						\end{equation}
+						We end up with:
+						\begin{equation}
+							(\hat{f}\hat{g})_{mn} = \sum_k f_{mk}g_{kn}
+						\end{equation}
+						
+					\item The operator's matrix is equivalent to the operator
+				\end{enumerate}
+	
+			\subsection{Switching to a different state basis}
 		
 	
 	\subsection{Pauli uncertainty principle}
-		
+		\subsubsection{Single-slit electron diffraction}
 		\subsubsection{Black holes}
 		\subsubsection{Quantum Pencil}
 			\cite{easton2007quantum}
