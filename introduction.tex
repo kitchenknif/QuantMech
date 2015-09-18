@@ -24,6 +24,14 @@
 		\begin{equation}
 			\bar{f} = \int \hat{f}dp = \int \Phi^* \hat{f} \Phi dq 
 		\end{equation}
+		
+		\begin{equation}
+			[\hat{f}, \hat{g}] = \hat{f}\hat{g} - \hat{g}\hat{f}
+		\end{equation}
+
+		\begin{equation}
+		\{\hat{f}, \hat{g}\} = \hat{f}\hat{g} + \hat{g}\hat{f}
+		\end{equation}
 	
 	\subsection{Heisenberg formalism}
 		\epigraph{Schr\"odinger was good at math, which is why his quantum mechanics formalism is full of complex mathematical constructs. Heisenberg, on the other hand, had a lot of difficulty with math, which is why his matrix quantum mechanics formalism is limited almost exclusively to linear algebra constructs}{Roman ... }
@@ -144,13 +152,134 @@
 						\end{equation}
 						
 					\item The operator's matrix is equivalent to the operator
+						\begin{equation}
+							\Psi = \sum_m c_m \varphi_m
+						\end{equation}
+						
+						\begin{align}
+							\hat{f} \Psi &= f \Psi \\
+							\hat{f}\sum_m c_m \varphi_m &= f\sum_m c_m \varphi_m \nonumber \\
+							\int \varphi_n^* \hat{f}\sum_m c_m \varphi_m dq &=  \int \varphi_n^* f\sum_m c_m \varphi_m dq\nonumber \\
+							\sum_m c_m \int \varphi_n^* \hat{f} \varphi_m dq &= f \sum_m c_m \int \varphi_n^* \varphi_m dq \nonumber \\
+							\sum_m c_m f_{nm} &= f \sum_m c_m \delta_{nm} \nonumber \\
+							\sum_m c_m f_{nm} &= f c_n \\							
+						\end{align}
+						
+						\begin{align}
+							\sum_m c_m f_{nm} &= f c_n \nonumber\\
+							\sum_m f_{nm} - f \delta_{nm} c_m &= 0 \Rightarrow \nonumber\\
+							\mid\mid f_{nm} - f\delta_{nm}\mid\mid &= 0 \\
+						\end{align}
+					
 				\end{enumerate}
 	
 			\subsection{Switching to a different state basis}
-		
+				$\{\varphi_n(q) \}$ and $\{\varphi_n'(q) \}$ are two different basis's.
+				
+				\begin{align} 
+					\varphi_n'(q) &= \sum_m S_{mn} \varphi_n(q) \\
+					\varphi_n' &= \hat{S} \varphi_n 
+				\end{align}
+				
+				Where $\hat{S}$ is the transition operator. If the new basis$\{\varphi_n^{'}(q) \}$ is orthogonal, meaning:
+				
+				\begin{equation}
+					\int \varphi_m'^* \varphi_n' dq = \delta_{mn}
+				\end{equation}
 	
+				then $\hat{S}^\dag = \hat{S}^{-1}$. \hl{Proof
+				\begin{equation}
+					\sum_l S_{lm}^*S_{ln} = \delta_mn
+				\end{equation}
+				}
+				
+				Operators in the new basis can be written as:
+				\begin{align}
+					\int \varphi_m'^* \hat{f} \varphi_n' dq &= \int(\hat{S}^* \varphi_m^* )(\hat{f} \hat{S} \varphi_n) dq = \nonumber \\
+					= \int \varphi_m^* \hat{S}^{*T} \hat{f} \hat{S} \varphi_n) dq &= \int \varphi_m^* \hat{f}' \varphi_n dq \Rightarrow \nonumber \\
+					\hat{f}' = \hat{S}^{*T}\hat{f}\hat{S} &= \hat{S}^\dag \hat{f} \hat{S} = \hat{S}^{-1}\hat{f}\hat{S}
+				\end{align}
+				
+				\paragraph{The operator's matrix's trace} is the sum of the operator matrix's diagonal elements:
+					\begin{equation}
+						Sp \hat{f} = \sum_n f_{nn}
+					\end{equation}
+					
+					\hl{Proof}
+					\begin{enumerate}
+						\item The trace of the product of two operators is invariant to the order of the operators 
+							\begin{equation}
+								Sp (\hat{f} \hat{g}) = Sp (\hat{g} \hat{f})
+							\end{equation}
+						\item The trace of the product of three or more operators is invariant to the cyclic permutation of the operators
+							\begin{equation}
+								Sp (\hat{f} \hat{g} \hat{h}) = Sp (\hat{h} \hat{f} \hat{g}) = Sp (\hat{g} \hat{h} \hat{f})
+							\end{equation}
+						
+					\end{enumerate}
+	
+					The operator's matrix's trace is invariant to the basis.
+					\begin{equation}
+						Sp \hat{f}' = Sp \hat{S}^{-1}\hat{f}\hat{S}  = Sp \hat{S}\hat{S}^{-1}\hat{f} =  Sp \hat{f} 
+					\end{equation}
+				\paragraph{Commutators}
+					Two operators commute if and only if they share a set of basis states. Or, in other words, there exist as basis in which they are both diagonal.
+					
+					If $\hat{f}$ and $\hat{g}$ commute, then:
+					\begin{equation}
+						[\hat{f}, \hat{g}] = \hat{f}\hat{g} - \hat{g}\hat{f} = 0
+					\end{equation}
+					Which means that	
+					\begin{equation}
+						\sum_k f_{mk}g_{kn} = \sum_k  g_{mk}f_{kn}
+					\end{equation}
+					If $\{\varphi_n\}$ are eigenfunctions of $\hat{f}$, then $f_{nm} \not= 0$ only if $n=m$ $\rightarrow$
+					\begin{align}
+						f_{mm}g_{mn} &= g_{mn} f_{nn} \nonumber \\
+						g_{mn} (f_{mm} - f_{nn}) &= 0
+					\end{align}
+					Meaning that $g_{mn} = 0$ if $m \not= n$ 
+				
 	\subsection{Pauli uncertainty principle}
+		The Pauli uncertainty principle states that if the operators of two observables do not commute, than we cannot measure both observables with arbitrary precision at the same time. In other words, that to more certain are we about one observable, the more uncertain we are about the other. For example:
+		\begin{align}
+			[\hat{x}, \hat{p_x}] = i\hbar \\
+			\Delta x \Delta p_x \geq \hbar
+		\end{align} 
+		
+		or, for an exact relation,
+		\begin{align}
+			\sigma_{x} \sigma_{p_x} &\geq \frac{\hbar}{2}\\
+			\sigma_{x} = \sqrt{<\Delta x^2>}&\quad 
+			\sigma_{p_x} = \sqrt{<\Delta p_x^2>} \\
+		\end{align}
+		
+		
 		\subsubsection{Single-slit electron diffraction}
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.45\textwidth]{./figs/ElectronDiffraction.eps}
+				\caption{Single-slit electron diffraction}
+				\label{electrondiffrac}
+			\end{figure}
+			
+			\begin{align}
+				b \sin(\theta) = \lambda \\
+				\Delta p_x = p \sin(\theta) \\
+				\Delta x = d
+			\end{align}
+			Using the relation for the de Broglie wavelength
+			\begin{equation}
+				\lambda = \frac{h}{p} = \frac{2*\pi *\hbar}{p}
+			\end{equation}
+			We get, considering
+			\begin{equation}
+				\Delta x \Delta p_x = d \sin(\theta) \frac{2\pi\hbar}{\lambda} = 2 \pi \hbar
+			\end{equation}
+			\begin{equation}
+				\Delta x \Delta p_x \approx \hbar
+			\end{equation}
+			
 		\subsubsection{Black holes}
 		\subsubsection{Quantum Pencil}
 			\cite{easton2007quantum}
