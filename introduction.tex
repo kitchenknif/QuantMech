@@ -149,6 +149,7 @@
 						We end up with:
 						\begin{equation}
 							(\hat{f}\hat{g})_{mn} = \sum_k f_{mk}g_{kn}
+							\label{fgproduct}
 						\end{equation}
 						
 					\item The operator's matrix is equivalent to the operator
@@ -187,11 +188,16 @@
 					\int \varphi_m'^* \varphi_n' dq = \delta_{mn}
 				\end{equation}
 	
-				then $\hat{S}^\dag = \hat{S}^{-1}$. \hl{Proof
-				\begin{equation}
-					\sum_l S_{lm}^*S_{ln} = \delta_mn
-				\end{equation}
-				}
+				then $\hat{S}^\dag = \hat{S}^{-1}$.
+				\begin{align}
+					\int \varphi_m'^* \varphi_n' dq &= \delta_{mn} \nonumber \\
+					\int \hat{S}^*\varphi_m^*  \hat{S}\varphi_n dq &= \delta_{mn} \nonumber \\					
+					\int \varphi_m^* (\hat{S}^*)^T \hat{S}\varphi_n dq &= \delta_{mn} \nonumber \\					
+					\int \varphi_m^* \sum_l S_{ml}^* S_{ln}\varphi_n dq &= \delta_{mn} \nonumber \\				
+					\sum_l S_{ml}^* S_{ln} \int \varphi_m^* \varphi_n dq &= \delta_{mn} \nonumber \\
+					\delta_{mn}(\sum_l S_{ml}^* S_{ln} - 1) &= 0 \quad \Rightarrow \nonumber \\
+					\hat{S}^\dag &= \hat{S}^{-1} \quad (S_{mn}^\dag = S_{nm}^*)
+				\end{align}
 				
 				Operators in the new basis can be written as:
 				\begin{align}
@@ -203,19 +209,34 @@
 				\paragraph{The operator's matrix's trace} is the sum of the operator matrix's diagonal elements:
 					\begin{equation}
 						Sp \hat{f} = \sum_n f_{nn}
+						\label{spf}
 					\end{equation}
 					
-					\hl{Proof}
 					\begin{enumerate}
 						\item The trace of the product of two operators is invariant to the order of the operators 
 							\begin{equation}
 								Sp (\hat{f} \hat{g}) = Sp (\hat{g} \hat{f})
+								\label{spfg}
 							\end{equation}
+							According to \ref{spf}, $Sp \hat{f} = \sum_n f_{nn}$, therefore (using \ref{fgproduct}):
+							\begin{align}
+								Sp (\hat{f}\hat{g}) &= \sum_n (\hat{f}\times \hat{g})_{nn} \nonumber \\	
+								&= \sum_n \sum_k f_{nk} g_{kn} \quad\text{and}\\
+								Sp (\hat{g}\hat{f}) &= \sum_n (\hat{g}\times \hat{f})_{nn} \nonumber \\	
+								&= \sum_n \sum_k g_{nk} f_{kn}, \quad n\rightarrow k; k\rightarrow n\nonumber \\
+								= \sum_k \sum_n g_{kn} f_{nk} &= \sum_n \sum_k f_{nk} g_{kn}
+							\end{align}
 						\item The trace of the product of three or more operators is invariant to the cyclic permutation of the operators
 							\begin{equation}
 								Sp (\hat{f} \hat{g} \hat{h}) = Sp (\hat{h} \hat{f} \hat{g}) = Sp (\hat{g} \hat{h} \hat{f})
+								\label{spfgh}
 							\end{equation}
-						
+							According to \ref{spfg}
+							\begin{align}
+								Sp(\hat{f}(\hat{g}\hat{h})) &= Sp((\hat{g}\hat{h})\hat{f}) \quad\text{and} \\
+								Sp((\hat{f}\hat{g})\hat{h}) &= Sp(\hat{h}(\hat{f}\hat{g})) 
+							\end{align} 
+							Which is equivalent to \ref{spfgh} because matrix multiplication is associative.
 					\end{enumerate}
 	
 					The operator's matrix's trace is invariant to the basis.

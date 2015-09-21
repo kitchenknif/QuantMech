@@ -1,9 +1,10 @@
-\documentclass[english, 11pt]{article}
+\documentclass[russian, english, 11pt]{article}
 
+\usepackage{paracol}
 \usepackage{notes}
 \usepackage{epigraph}
 \usepackage{epstopdf}
-%\usepackage{paracol}
+\usepackage{siunitx}
 
 % Uncomment these for a different family of fonts
 % \usepackage{cmbright}
@@ -40,6 +41,7 @@
 
 \newcommand{\hl}[1]{\textcolor{red}{#1}}
 
+\newcommand{\rus}[1]{\foreignlanguage{russian}{#1}}
 
 % Begin Document
 \begin{document}
@@ -49,7 +51,23 @@
 	% Table of Contents and List of Figures
 	\tocandfigures
 	% Abstract
-	\doabstract{Quantum Mechanics Lecture Notes.}
+	\doabstract{Quantum Mechanics Lecture Notes.
+		
+		\hl{TODO:}
+		\begin{itemize}
+			\item Language - \rus{Русский} or English?
+			\item \rus{Определиться с стилистикой доказательств - всякие новомодные ЧТД $\qed$ и прочее}
+		\end{itemize}
+		
+		
+		\begin{paracol}{2}[\textbf{Dual language Example}]
+				\rus{Двуязычность можно например реализовать вот так...}
+				blah blah blahy
+			\switchcolumn
+				And here some english text
+		\end{paracol}
+			
+		}
 	
 	\include{introduction}
 	\include{analytical}
