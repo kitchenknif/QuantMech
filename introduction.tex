@@ -303,7 +303,7 @@
 			
 		\subsubsection{Black holes}
 			\epigraph{And now let's talk about black holes}{Ivan Iorsh}
-			For an average star we can say that it's electrically neutral, has about the name number of protons as neutrons and is approximately spherical:
+			For an white dwarf star we can say that it's electrically neutral, has about the name number of protons as neutrons and is approximately spherical:
 			\begin{align}
 				\bar{e} \rightarrow N \\
 				\bar{p} \rightarrow N \\
@@ -313,7 +313,7 @@
 			\end{align}
 			\begin{figure}[!h]
 				\centering
-				%\includegraphics[width=0.45\textwidth]{./figs/ElectronDiffraction.eps}
+				\includegraphics[width=0.45\textwidth]{./figs/placeholder.eps}
 				\caption{Spherical horse in a vacuum}
 				\label{star}
 			\end{figure}
@@ -328,7 +328,7 @@
 			\end{equation}
 			And considering that electron positions $d$ are of the same order as their \hl{dispersion} $\Delta d \approx d$; and the same for their momentum, $\Delta p \approx p$ the Pauli uncertainty principle can be written as (for one electron):
 			\begin{align}
-				\Delta p \Delta d \gtrsim \frac{\hbar}{2}; \qquad v \frac{p}{m_e} \\
+				\Delta p \Delta d \gtrsim \frac{\hbar}{2}; \qquad v = \frac{p}{m_e} \\
 				\Delta p \approx = \frac{\hbar}{2 \Delta d} = \frac{\hbar}{2 d} \\
 				E_{kinetic} = \frac{m_ev^2}{2} = \frac{p^2}{2m_e} = \frac{\hbar^2}{8d^2m_e}
 			\end{align}
@@ -361,13 +361,102 @@
 		
 			\begin{figure}[!h]
 				\centering
-				%\includegraphics[width=0.45\textwidth]{./figs/ElectronDiffraction.eps}
+				\includegraphics[width=0.45\textwidth]{./figs/placeholder.eps}
 				\caption{Forces integration schematic}
 				\label{starintegration}
 			\end{figure}
 		
+			The potenetial energy of the star:
+			\begin{align}
+				dU =& \frac{-G(\frac{4}{3}\pi r^3 \rho)(4\pi r^2 dr \rho)}{r} = -\frac{16}{3}G\pi^2 \rho^2 r^4 \\
+				U = \int_0^R dU =& -\int_0^R\frac{16}{3}G\pi^2 \rho^2 r^4 = -\frac{16}{15}G\pi^2 \rho^2 r^5 \mid_0^R = -\frac{16}{15}G\pi^2 \rho^2 R^5 \\
+				M =& \frac{4}{3}\pi\rho R^5 \\
+				\frac{M^2}{R} =& \frac{16}{9} \pi^2 \rho^2 R^5 \\
+				U =& -G \frac{9}{15} \frac{M^2}{R}
+			\end{align}
+			The kinetic energy of the star's electrons:
+			For a single electron:
+			\begin{align}
+				\Delta p \Delta d \gtrsim \frac{\hbar}{2}; \qquad v \frac{p}{m_e} \\
+				\Delta p \approx = \frac{\hbar}{2 \Delta d} = \frac{\hbar}{2 d} \\
+				E_{kinetic} = \frac{m_ev^2}{2} = \frac{p^2}{2m_e} = \frac{\hbar^2}{8d^2m_e}
+			\end{align}
+			And for $N$ electrons:
+			\begin{equation}
+				E_{kN} = \frac{N\hbar^2}{8d^2m_e}
+				\label{starkinunrel}
+			\end{equation}			
 			
+			Now the total energy of the star is:
+			\begin{align}
+				E =& \frac{N\hbar^2}{8d^2m_e} -G \frac{9}{15} \frac{M^2}{R} = \\
+				=& \frac{N^{\frac{5}{3}}\hbar^2}{8R^2m_e(\frac{4}{3}\pi)^{\frac{2}{3}}} -G \frac{9}{15} \frac{M^2}{R} = \\
+				=& \frac{M^{\frac{5}{3}}\hbar^2}{8R^2m_e(\frac{4}{3}\pi)^{\frac{2}{3}}(2m_p)^{\frac{5}{3}}} -G \frac{9}{15} \frac{M^2}{R}
+			\end{align}
+			
+			For a stable star, its stable radius should be in a minimum of energy,
+			\begin{equation}
+				\frac{\partial E}{\partial R} = 0
+			\end{equation}
+			
+			For our star,
+			\begin{align}
+				\frac{\partial E}{\partial R} =& - \frac{M^{\frac{5}{3}}\hbar^2}{4R^3m_e(\frac{4}{3}\pi)^{\frac{2}{3}}(2m_p)^{\frac{5}{3}}} + G \frac{9}{15} \frac{M^2}{R^2} \\
+				\frac{\partial E}{\partial R} =& 0 \Rightarrow \\
+				&\frac{M^{\frac{5}{3}}\hbar^2}{4R^3m_e(\frac{4}{3}\pi)^{\frac{2}{3}}(2m_p)^{\frac{5}{3}}} = G \frac{9}{15} \frac{M^2}{R^2} \\
+				&\frac{15}{36}\frac{GM^{-\frac{1}{3}}}{m_e(\frac{4}{3}\pi)^{\frac{2}{3}}(2m_p)^{\frac{5}{3}}} = R
+			\end{align}
+			Or simply, 
+			\begin{equation}
+				M^{\frac{1}{3}} R = const
+				\label{unrelsize}
+			\end{equation}
+			Which means that for every stellar mass there exists a certain stable radius. The problem with this equation is that it does not take into account that electrons in such a star a highly relativistic \hl{TODO: MOVE RELATIVISTIC THING HERE}, meaning that the kinetic energy of the star cannot be accurately represented as in \ref{starkinunrel}. 	
+			
+			For a relativistic electron, 
+			\begin{align}
+				E_k = \sqrt{m^2c^4+p^2c^2} \approx& \\
+				pc \ll mc^2, \qquad \approx& me^2 + \frac{p^2}{2m} \\
+				pc \gg mc^2, \qquad \approx& cp
+			\end{align}
+			
+			Taking into account that $v_e \approx \frac{1}{3}c$, and that $p = \frac{\hbar}{2d}$,
+			\begin{align}
+				E_{kinetic} =& \frac{c\hbar}{2d} = \frac{c\hbar N^{\frac{4}{3}}}{2 R (\frac{4}{3}\pi)^{\frac{1}{3}}} = \frac{c \hbar M^{\frac{4}{3}}}{2 R (\frac{4}{3}\pi)^{\frac{1}{3}}(2m_p)^{\frac{4}{3}}} \\
+				E =& \frac{c \hbar M^{\frac{4}{3}}}{2 R (\frac{4}{3}\pi)^{\frac{1}{3}}(2m_p)^{\frac{4}{3}}} -G \frac{9}{15} \frac{M^2}{R}  =\\
+				=& \frac{1}{R}(\frac{c \hbar M^{\frac{4}{3}}}{2 (\frac{4}{3}\pi)^{\frac{1}{3}}(2m_p)^{\frac{4}{3}}} -G M^2 \frac{9}{15}) \label{enrel}
+			\end{align}
+			Which means that a stable $R$ doesn't exist for such stars - if the expression in parenthesis in \ref{enrel} is greater than zero, than the star expands until its electrons are no longer relativistic, and it settles to a radius defined by \ref{unrelsize}, or if the expression in parenthesis in \ref{enrel} is less than zero, the star's kinetic energy is insufficient to withstand its gravitational pull and it collapses into a black hole.
+			The mass at which this happens, $M_{cr}$, is
+			
+			\begin{align}
+				M_{cr} =& \left( \frac{15 c \hbar}{9 G 2(2m_p)^{\frac{4}{3}}(\frac{4}{3} \pi)^{\frac{1}{3}}} \right)^{\frac{3}{2}} = \\
+				&... \hl{\text{explicit calc}} ... \nonumber\\ 
+				\approx& 10^{30} \si{kg} \approx 1.4 M_{\astrosun}
+			\end{align} 
+			Where $M_{\astrosun}$ is the mass of our sun. Meaning that no white dwarf star with a mass over 1.4$M_{\astrosun}$ can stably exist.
+			
+			Nobel Prize lecture, Subrahmanyan Chandrasekhar\cite{chandrasekhar1984stars}.
 		\subsubsection{Quantum Pencil}
-			\cite{easton2007quantum}
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.45\textwidth]{./figs/placeholder.eps}
+				\caption{Vertical pencil diagram}
+				\label{pencil}
+			\end{figure}
+			
+			If we place a pencil with mass $m = 10^{-6}\si{kg}$ on its tip $d_0 = 10^{-10}\si{m}$, because of the uncertainty principle, its center of mass will start to move,
+			\begin{align}
+				\Delta x \Delta \approx& \frac{\hbar}{2} \\
+				\Delta x <& d_0 \\
+				\Delta p >& \frac{\hbar}{2 d_0} \\
+				p \sim& \Delta p \\
+				v =& \frac{p}{m} = \frac{\hbar}{2 d_0 m}
+			\end{align}
+			We can say that the pencil has fallen when its center of mass is no longer over the "tip" of the pencil (Fig,.\ref{pencil}).
+			\begin{align}
+				t \sim \frac{d_0}{v} = \frac{2d_0^2m}{\hbar} \approx \frac{2 * (10^{-10})^2 * 10^{-6}}{10^{-34}} \approx 10^8 \si{s}
+			\end{align}
+			Which means that the pencil can stably exist in a vertical position for over 3 years (compared to other solutions, which give unrealistic estimates of about 3 seconds)\cite{easton2007quantum}.
 		
 	\subsection{Problems}
