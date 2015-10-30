@@ -1,11 +1,71 @@
 \section{Analytical Solutions}
 	\subsection{Rectangular quantum well}
-		\begin{figure}
+		\begin{figure}[!h]
 			\centering
 			\input{figs/1dwellfin.tex}
 			\caption{Finite rectangular quantum well}
 		\end{figure}
 		
+		\begin{equation}
+			\hat{H} = \frac{\hbar}{2m} \frac{\partial^2}{\partial z^2} + U(z)
+		\end{equation}
+		
+		\begin{align}
+			\text{II:}&\qquad E\Psi = \frac{\hbar}{2m} \frac{\partial^2}{\partialz^2}\Psi \\
+			\text{I \& III:}& \qquad E\Psi = \frac{\hbar}{2m} \frac{\partial^2}{\partialz^2}\Psi + U_0\Psi
+		\end{align}
+		
+		Solutions for each area:
+		\begin{align}
+			\text{I:}&\qquad \Psi = A e^{+ik'z} + B e^{-ik'z} \\
+			\text{II:}&\qquad \Psi = C e^{+ikz} + D e^{-ikz} \\
+			\text{III:}&\qquad \Psi = F e^{+ik'z} + G e^{-ik'z} \\
+			&\qquad k = \sqrt{\frac{2mE}{\hbar^2}};\qquad k' = \sqrt{\frac{2m(E-U_0)}{\hbar^2}}
+		\end{align}
+		For $E < U_0$, $k'$ is imaginary, meaning that
+		\begin{align}
+			\lim_{z \to -\infty} Ae^{+ik'z} = \lim_{z \to -\infty} Ae^{-sz} = \infty \\
+			\lim_{z \to \infty} Ge^{-ik'z} = \lim_{z \to \infty} Ae^{sz} = \infty
+		\end{align}
+		Which is not physical, meaning that 
+		\begin{equation}
+			A = G = 0
+		\end{equation}
+		We have bounadary conditions at $z = -\frac{d}{2}$ and $z = \frac{d}{2}$:
+		\begin{align}
+			\Psi_I = \Psi_{II}|_{z=-\frac{d}{2}};&\qquad  \Psi_I' = \Psi_{II}'|_{z=-\frac{d}{2}} \\
+			\Psi_{II} = \Psi_{III}|_{z=\frac{d}{2}};&\qquad  \Psi_{II}' = \Psi_{III}'|_{z=\frac{d}{2}}
+		\end{align}
+		Which can be written as:
+		\begin{align}
+			\kappa = ik' =& \sqrt{\frac{2m(U_0-E)}{\hbar^2}} \\
+			Be^{-\kappa\frac{d}{2}} = Ce^{-ik\frac{d}{2}} + De^{+ik\frac{d}{2}}&\\
+			-B\kappa e^{-\kappa\frac{d}{2}} &= ikCe^{-ik\frac{d}{2}} - ikde^{+ik\frac{d}{2}}\\
+			Fe^{-\kappa\frac{d}{2}} = Ce^{+ik\frac{d}{2}} + De^{-ik\frac{d}{2}}&\\
+			-F\kappa e^{-\kappa\frac{d}{2}} &= ikCe^{+ik\frac{d}{2}} - ikde^{-ik\frac{d}{2}}\\
+		\end{align}
+		Or in matrix form:
+		\begin{equation}
+			\begin{pmatrix}
+			e^{-\kappa\frac{d}{2}}			&	-e^{-ik\frac{d}{2}}	&	-e^{ik\frac{d}{2}}	&	0 \\ 
+			0	&	-e^{-ik\frac{d}{2}}	&	-e^{-ik\frac{d}{2}}	&	e^{-\kappa \frac{d}{2}} \\
+			-\kappa e^{-\kappa \frac{d}{2}}	& -ike^{-ik\frac{d}{2}}	& +ike^{ik\frac{d}{2}}	& 0 \\
+			0	& +ike^{ik\frac{d}{2}}	& -ike^{ik\frac{d}{2}}	& 	-\kappa e^{-\kappa\frac{d}{2}}	& \\
+			\end{pmatrix}
+			\begin{pmatrix}
+			B \\
+			C \\
+			D \\
+			F \\
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			0 \\
+			0 \\
+			0 \\
+			0 \\
+			\end{pmatrix}			
+		\end{equation}
 	\subsection{Harmonic oscillator}
 	\subsection{Spherically symmetric potential}
 	\subsection{Problems}
