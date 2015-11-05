@@ -343,14 +343,66 @@
 			\begin{equation}
 				\Psi_n = \hat{T_n}\hat{T_{n-1}}...\hat{T_2}\hat{T_1}\Psi_0, \qquad \hat{T_i} = \hat{M}_{i-1\rightarrow i}\hat{P_i} 
 			\end{equation}
+			
+			Transfer matricies can also be used to find the bound states or eigenmodes of the system:
+			\hl{Wait, what?}
+			\begin{align}
+				\hat{\Psi}_{\frac{d}{2}} =& \hat{\Psi}_{-\frac{d}{2}} \\
+				\begin{pmatrix}
+					Ae^{-\kappa \frac{d}{2}} \\
+					-\kappa Ae^{-\kappa \frac{d}{2}} \\
+				\end{pmatrix} =& \hat{T} 
+				\begin{pmatrix}
+					Be^{-\kappa \frac{d}{2}} \\
+					\kappa Ae^{-\kappa \frac{d}{2}} \\
+				\end{pmatrix}
+			\end{align}
+			
+			Using transfer matricies, the calculation of an electron's probability of tunneling through a barrier is equivalent to solving the following matrix equation:
+			\begin{align}
+				\begin{pmatrix}
+					t \\
+					0
+				\end{pmatrix} = \hat{M}
+				\begin{pmatrix}
+					1 \\
+					r
+				\end{pmatrix} \\
+				r  = -\frac{M_{21}}{M_{22}} \\
+				t = \frac{1}{M_{22}}
+			\end{align}
 	\subsection{Harmonic oscillator}
 	\subsection{Spherically symmetric potential}
+	\newpage
 	\subsection{Problems}
 		\subsubsection{Rectangular quantum well}
-			Double quantum well
-			
-			Double quantum barrier
-			
-			Minimal transistor size
-			
+			\paragraph{Double quantum well}
+				\begin{figure}[!h]
+					\centering
+					\input{figs/doublequantumwell.tex}
+					\caption{Double quantum well}
+				\end{figure}
+				
+				Calculate the eigenstates.
+			\paragraph{Double quantum barrier}
+				\begin{figure}[!h]
+					\centering
+					\input{figs/doublequantumbarrier.tex}
+					\caption{Double quantum barrier system}
+				\end{figure}
+				
+				Calculate the probability of a an electron tunneling through a system of two potential barriers.			
+			\paragraph{Minimal transistor size}
+				\begin{figure}[!h]
+					\centering
+					\input{figs/transistor.tex}
+					\caption{Model transistor}
+				\end{figure}
+							
+				Calculate the size of a quantum barrier at which an electron's probability of tunneling through is equal to $0.5$.
+				\begin{align}
+					m_{el} \approx& 0.3 m_0 \\
+					m_0 \approx& 10^{-30}\si{kg} \\
+					p =& |\Psi|^2
+				\end{align}
 			
