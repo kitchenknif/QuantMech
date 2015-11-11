@@ -1,2 +1,48 @@
 \section{Quasi-classical approximation}
 	\subsection{Problems}
+		\subsubsection{Exponential potential}
+			\begin{figure}[!h]
+				\centering
+				\input{figs/wkb/expbarrier.tex}
+				\caption{Exponentially decaying potential barrier}
+			\end{figure}
+			For a potential barrier:
+			\begin{align}
+				U(x) = \left\{ \begin{aligned}
+					0,\quad x < a \\
+					\frac{\alpha}{x},\quad x > a
+				\end{aligned}
+				\right. \\
+			\end{align}
+			and a particle with $E > 0$, what are the reflection and transmission coefficients?
+			
+		\subsection{Hemisphere potential}
+			\begin{figure}[!h]
+				\centering
+				\input{figs/wkb/hemispherebarrier.tex}
+				\caption{Hemisphere potential barrier}
+			\end{figure}
+			For a potential barrier:
+			\begin{align}
+				U(x) = U_0 \cos(\frac{\pi}{2a}x), \quad -a \leq x \leq a
+			\end{align}
+			and a particle with $E > 0$, what are the reflection and transmission coefficients?
+		\subsection{Minimal transistor size}
+			\begin{figure}[!h]
+				\centering
+				\input{figs/transistor.tex}
+				\caption{Model transistor}
+			\end{figure}
+			
+			\begin{align}
+				m_{el} \approx& 0.3 m_0 \\
+				m_0 \approx& 10^{-30}\si{kg} \\
+				p =& |\Psi|^2
+			\end{align}			
+			
+			Calculate the size of a quantum barrier at which an electron's probability of tunneling through is equal to $0.5$ using the quasi-classical approach, and compare it to the exact solution.
+		
+		\subsection{Classical limit*}	
+			For a potential $U(x)$ that possesses a certain number of bound states with energies $E_n$, in the limit $n\rightarrow\infty$, we transition into classical mechanics. 
+			
+			How does $\Delta E = E_{n+1}-E_n$ change for $n\rightarrow\infty$?

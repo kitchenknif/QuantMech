@@ -1,0 +1,15 @@
+\begin{tikzpicture}cap=round,>=latex]
+	\begin{axis}[grid=none,
+	axis x line=middle,
+	axis y line=left,	
+	enlargelimits,
+	xtick={-1,0,1},
+	xticklabels={$-a$, $0$, $a$},
+	ytick={1},
+	yticklabels={$U_0$},
+	domain=-1.2:1.2
+	]
+	
+	\addplot[no markers, line width=1.5, samples=50, domain=-1:1] {cos(deg(pi*x/2))};
+	\end{axis}								
+\end{tikzpicture}
