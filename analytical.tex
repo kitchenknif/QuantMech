@@ -557,6 +557,73 @@
 			\left[\hat{L_z}, \hat{L_+}\right] =& -\hbar\hbar{L_+}
 		\end{align}
 		
+		\begin{align}
+			\hat{L_+}\hat{L_-} =& \hat{L_x}^2 + \hat{L_y}^2 + i\left(\hat{L_y}\hat{L_x} - \hat{L_x}\hat{L_y}\right) \\
+			=& \hat{L_x}^2 + \hat{L_y}^2 + \hbar\hat{L_z} \\
+			=& \hat{\vec{L}}^2 - \hat{L_z}^2 + \hbar\hat{L_z}
+		\end{align}
+		
+		Using these definitions, we can calculate the eigenvalues of $\hat{\vec{L}}^2$ and $\hat{L_z}$.
+		
+		\begin{align}
+			\hat{\vec{L}}^2 =& \frac{1}{2}\left(\hat{L_+}\hat{L_-} - \hat{L_-}\hat{L_+}\right) + \hat{L_z}^2 \\
+			\hat\vec{{L}}^2 =& \hat{L_x}^2 + \hat{L_y}^2 + \hat{L_z}^2
+		\end{align}
+		Which means that $\hat{\vec{L}}^2$ is positive, meaning that its eigenvalues are not negative:
+		\begin{align}
+			\left\langle \Psi | \hat{\vec{L}} | \Psi \right\rangle \geq& 0 \\
+			\lambda\left\langle \Psi | \Psi \right\rangle \geq& 0 \\
+			\lambda \geq& 0 
+		\end{align}
+		
+		A positive and real number can be represented as $j(j + 1)$, meaning that:
+		\begin{align}
+			\lambda =& \hbar^2 j(j+1) \\
+			\left. \hat{\vec{L}}^2 | \Psi \right\rangle =& \left. \hbar^2 j(j+1)| \Psi \right\rangle \\
+			\left. \hat{L_z} | \Psi \right\rangle =& \left. \hbar m | \Psi \right\rangle \\
+			\left. |\Psi \right\rangle =& \left. |j,m \right\rangle \\ 
+		\end{align}
+		Knowing this, we can write:
+		\begin{align}
+			\left|\left. \hat{L_+}|j,m\right\rangle\right|^2 =& \left\langle j,m |\hat{L_-}|\hat{L_+}| j,m \right\rangle = \left\langle j,m |\hat{\vec{L}}^2 - \hat{L_z}^2 - \hbar\hat{L_z}| j,m \right\rangle \\
+			=& \left(\hbar^2j(j+1) - m^2\hbar^2 - \hbar^2m\right)\left\langle j,m | j,m \right\rangle = \left(\hbar^2j(j+1) - m^2\hbar^2 - \hbar^2m\right) \\
+			& \left(\hbar^2j(j+1) - m^2\hbar^2 - \hbar^2m\right) \geq 0 \\
+			& (j - m)(j + m) + j-m \geq 0 \\
+			& (j - m)(j + m + 1) \geq 0 \Rightarrow\\
+			& -j-1 \leq m \leq j
+		\end{align}
+		\hl{And}:
+		\begin{align}
+			\left|\left. \hat{L_-}|j,m\right\rangle\right|^2 =& \left\langle j,m |\hat{L_+}|\hat{L_-}| j,m \right\rangle = \hl{...} \\
+			& (j + m)(j - m + 1) \geq 0 \Rightarrow\\
+			& -j \leq m \leq j + 1
+		\end{align}		
+		Which means that:
+		\begin{equation}
+			- j \leq m \leq j		
+		\end{equation}
+		
+		For the two edge cases, $m = j$ and $m = -j$:
+		\begin{align}
+			m = j& \\
+			\left| \left. \hat{L_+} | j,j \right\rangle \right|^2 &= \left\langle j,j | \hat{L_-}| \hat{L_+} |j,j \right\rangle \\
+			&= \hbar^2 \left( j(j+1) - j^2 - j\right) = 0 \\
+			\left. \hat{L_+} | j,j \right\rangle &= 0 \\
+			m = -j& \\
+			\left| \left. \hat{L_-} | j,j \right\rangle \right|^2 &= \left\langle j,j | \hat{L_+}| \hat{L_-} |j,j \right\rangle \\
+			&= \hbar^2 \left( j(j+1) - (-j)^2 + (-j)\right) = 0 \\
+			\left. \hat{L_+} | j,j \right\rangle &= 0 \\			
+			\left. \hat{L_-} | j,-j \right\rangle &= 0 \\			
+		\end{align}
+		Now for $\hat{L_z}$:
+		\begin{align}
+			\left.\left[L_z, L_-\right]|j,m\right\rangle =& \left.-i\hbar\hat{L_-}|j,m\right\rangle \\
+			=& \left.\hat{L_z}\hat{L_-}|j,m\right\rangle - \left.\hat{L_-}\hat{L_z}|j,m\right\rangle = \left.\hat{L_z}\hat{L_-}|j,m\right\rangle - \left.(-i\hbar m)\hat{L_-}|j,m\right\rangle \Rightarrow \\
+			\left.\hat{L_z}\hat{L_-}|j,m\right\rangle =& \left. \hbar(m-1)\hat{L_z}|j,m\right\rangle \\
+			\left.\left[L_z, L_+\right]|j,m\right\rangle =& \left.i\hbar\hat{L_+}|j,m\right\rangle \\
+			=& \left.\hat{L_z}\hat{L_+}|j,m\right\rangle - \left.\hat{L_+}\hat{L_z}|j,m\right\rangle = \left.\hat{L_z}\hat{L_+}|j,m\right\rangle - \left.(-i\hbar m)\hat{L_+}|j,m\right\rangle \Rightarrow \\			
+			\left.\hat{L_z}\hat{L_+}|j,m\right\rangle =& \left. \hbar(m+1)\hat{L_z}|j,m\right\rangle \\			
+		\end{align}
 	\newpage
 	\subsection{Problems}
 		\subsubsection{Rectangular quantum well}
