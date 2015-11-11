@@ -624,6 +624,108 @@
 			=& \left.\hat{L_z}\hat{L_+}|j,m\right\rangle - \left.\hat{L_+}\hat{L_z}|j,m\right\rangle = \left.\hat{L_z}\hat{L_+}|j,m\right\rangle - \left.(-i\hbar m)\hat{L_+}|j,m\right\rangle \Rightarrow \\			
 			\left.\hat{L_z}\hat{L_+}|j,m\right\rangle =& \left. \hbar(m+1)\hat{L_z}|j,m\right\rangle \\			
 		\end{align}
+		Which is very similar to the $\hat{N}\hat{a_+}$ and $\hat{N}\hat{a_-}$ operators from Section \ref{sec:harmonic}.
+		
+		\begin{align}
+			\left.\hat{L_-}|j,m\right\rangle = \left.\alpha|j,m-1\right\rangle \\
+			\left.\hat{L_+}|j,m\right\rangle = \left.\alpha|j,m+1\right\rangle \\
+		\end{align}
+		\paragraph{$\hat{L_-}$}
+			If we apply $\hat{L_-}$ $p$ times:
+			\begin{align}
+				\left. \left(\hat{L_-}\right)^p | j,m \right\rangle &\\
+				\left. \hat{L_z}\left(\hat{L_-}\right)^p | j,m \right\rangle &= \left. (m-p)\left(\hat{L_-}\right)^p | j,m \right\rangle
+			\end{align}
+			If we apply $\hat{L_-}$ enough times, then $p-m$ approaches $-j$. In the limit case (when we can't apply  $\hat{L_-}$ any more because $m-(p+1) < -j$), we are left with 2 possible situations:
+			\begin{align}
+				I: -j < m - p&\\
+				\left. \left(\hat{L_-}\right)^p | j,m-p \right\rangle &\neq 0 \\
+				II: -j = m - p&\\
+				\left. \left(\hat{L_-}\right)^p | j,m-p \right\rangle &= 0 \\
+			\end{align}
+			
+			We'll consider the first situation.
+			\begin{align}
+				\left. \hat{L_z}\hat{L_-} | j,m-p \right\rangle	 = \left. \hbar(m-p-1) \hat{L_-}| j,m-p \right\rangle \\
+				-j -1 < m-p-1 < -j
+			\end{align}
+			But that contradicts the initial condition, $-j \leq m \leq j$, which means that
+			\begin{align}
+				-j = m - p& \\ 
+				\left. \left(\hat{L_-}\right)^p | j,m-p \right\rangle &= 0 \\
+			\end{align}
+		\paragraph{$\hat{L_+}$}
+			If we apply $\hat{L_+}$ $q$ times:
+			\begin{align}
+				\left. \left(\hat{L_+}\right)^q | j,m \right\rangle &\\
+				\left. \hat{L_z}\left(\hat{L_-}\right)^q | j,m \right\rangle &= \left. (m+q)\left(\hat{L_+}\right)^q | j,m \right\rangle
+			\end{align}
+			If we apply $\hat{L_+}$ enough times, then $p+q$ approaches $+j$. In the limit case (when we can't apply  $\hat{L_+}$ any more because $m+(p+1) > j$), we are left with 2 possible situations:
+			\begin{align}
+				I: j > m + q&\\
+				\left. \left(\hat{L_+}\right)^q | j,m+q \right\rangle &\neq 0 \\
+				II: j = m + q &\\
+				\left. \left(\hat{L_+}\right)^q | j,m+q \right\rangle &= 0 \\
+			\end{align}
+			
+			We'll consider the first situation.
+			\begin{align}
+				\left. \hat{L_z}\hat{L_+} | j,m+q \right\rangle	 = \left. \hbar(m+q+1) \hat{L_+}| j,m+q \right\rangle \\
+				j + 1 > m+q+1 > j
+			\end{align}
+			But that contradicts the initial condition, $-j \leq m \leq j$, which means that
+			\begin{align}
+				j = m + q& \\ 
+				\left. \left(\hat{L_+}\right)^q | j,m+q \right\rangle &= 0 \\
+			\end{align}
+			
+		This gives us:
+		\begin{align}
+			-j = m - p \\
+			j = m + q \\
+			2j = p + q, \quad p,q \in \mathds{N} \Rightarrow \\
+			j = \frac{p + q}{2}
+		\end{align}
+		Which means that $j$ is either whole or is either divisible by $2$.
+		
+		\paragraph{Eigenfunctions of $\hat{L_z}$ and $\hat{\vec{L}}^2$}
+		
+		\begin{align}
+			\left. \hat{\vec{L}}^2|j,m\right\rangle =& \left. \hbar^2 j(j+1)|j,m\right\rangle\\
+			\left. \hat{L_z}|j,m\right\rangle =& \left. \hbar m|j,m\right\rangle
+		\end{align}
+		
+		\begin{align}
+			\hat{L_x} =& i \hbar \left( \sin(\phi)\frac{\partial}{\partial \theta} + \frac{\cos(\phi)}{\tan(\phi)frac{\partial}{\partial \phi}} \right) \\
+			\hat{L_y} =& i \hbar \left( - \cos(\phi)\frac{\partial}{\partial \theta} + \frac{\sin(\phi)}{\tan(\phi)frac{\partial}{\partial \phi}} \right)	\\
+			\hat{L_z} =& \frac{\hbar}{i} \frac{\partial}{\partial \phi}
+		\end{align}
+		
+		\begin{align}
+			\left.\hat{L_z}| m \right\rangle =& \left. \hbar m | m \right\rangle \\
+			\left.-i\hbar \frac{\partial}{\partial \phi}| m \right\rangle =& \left. \hbar m | m \right\rangle \\
+			\left\langle \Phi | m \right\rangle =& e^{im\phi} \\
+			e^{0} =& e^{2\pi i m} \\
+			j = 0, ..., n, \quad m = \left[-j, j\right] -& 2n+1 \quad\text{values} \\
+			\left. |l,m\right\rangle = \mathcal{Y}_l^m(\theta, \phi) =& \mathcal{L}_l^m(\theta)e^{im\phi}
+		\end{align}
+		
+		\begin{align}
+			\left\{ \begin{aligned}
+				\hat{L_+} =& (\hat{L_x} +i\hat{L_y}\\
+				\hat{L_+} =& \hbar e^{i\phi}\left(\frac{\partial}{\partial \theta} + i\cot{\theta}\frac{\partial}{\partial \phi}\right) \\
+				\left. \hat{L_+}|l,l\right\rangle =& 0
+			\end{aligned} \right.
+		\end{align}
+		
+		\hl{Derivation!}
+		\begin{align}
+			\left|l,l\right\rangle =& \mathcal{L}_l^l (\theta) e^{il\phi} \\
+			\mathcal{L}_l^l (\theta) =& A\sin^l (\theta) \\
+			\mathcal{Y}_l^l =& Asin^l(\theta)e^{il\phi}\\
+			\mathcal{Y}_l^{l-m} =& \hat{L_-}^m\mathcal{L}_l^l
+		\end{align}
+		
 	\newpage
 	\subsection{Problems}
 		\subsubsection{Rectangular quantum well}
