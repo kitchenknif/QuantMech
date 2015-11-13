@@ -51,6 +51,20 @@
 		\begin{equation}
 			\Psi = \frac{c_1}{\sqrt{p}}\exp(\frac{i}{\hbar}\int_a^x pdx) + \frac{c_2}{\sqrt{p}}\exp(-\frac{i}{\hbar}\int_a^x pdx)
 		\end{equation}
+		\subsubsection{Applicability}
+			When we did the \hl{magic voodoo that I missed in class}, we took for granted that 
+			\begin{equation}
+				\frac{a}{2m}(\nabla S_0)^2 \gg \frac{i\hbar}{2m}\Delta S_0
+			\end{equation}
+			Which, considering that $\nabla S_0 = p$ and introducing the de Broglie wavelength, $\lambda_B = \frac{\hbar}{p}$ is equivalent to:
+			\begin{align}
+				\frac{a}{2m}(\nabla S_0)^2 \gg& \frac{i\hbar}{2m}\Delta S_0 \\
+				frac{p^2} \gg& i\hbar\frac{\partial p}{\partial x} \\ 
+				\frac{\hbar}{p^2}\left|\frac{dp}{dx}\right| \ll& 1 \\
+				\left|\frac{d\lambda_B}{dx}\right| \ll&  1 \Leftrightarrow\\
+				\left|U(x)\right| \gg& \lambda_B
+			\end{align}
+			Which means that the quasi-classical approximation is applicable when the potential varies slowly relative to the de Broglie wavelength of the partical in the potential.
 	
 	\subsection{Problems}
 		\subsubsection{Exponential potential}
