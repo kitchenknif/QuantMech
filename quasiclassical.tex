@@ -1,4 +1,57 @@
 \section{Quasi-classical approximation}
+	The quasi-classical or WKB approximation allows us to solve the Shr\"odinger equation in several cases where it is not possbile to find a direct analytical solution, without resorting to more complex approximations like the perturbation theory.
+	
+	\subsection{\hl{1D Derivation}}
+		\begin{equation}
+			-ih\frac{\partial\Psi}{\partial t} = -\frac{\hbar}{2m}\Delta\Psi + U(x)\Psi
+		\end{equation}
+		Let's search for a solution to the Shr\"odinger equation in the form:
+		\begin{equation}
+			\Psi = a(x, t)e^{\frac{i}{\hbar}S(x,t)}
+		\end{equation}
+		Substituting back into the Shr\"odinger equation, we get
+		\begin{equation}
+			\frac{\partial S}{\partial t} - i \hbar \frac{\partial a}{\partial t} + \frac{a}{2m}(\nabla S)^2 - \frac{i\hbar}{2 m}a\Delta S - \frac{i\hbar}{2m}a\Delta S -\frac{i\hbar}{m}\nabla S \nabla a + Ua = 0
+		\end{equation}
+		\hl{some voodoo related to Taylor series and $\hbar$}
+		\begin{equation}
+			\left\{\begin{aligned}
+				a \frac{\partial a}{\partial t} + \frac{a}{2m}(\nabla S)^2 + Ua= 0\\
+				-i\hbar \left(\frac{\partial a}{\partial t} + \frac{1}{2m}a\frac{\partial^2S}{\partial x^2} + \frac{1}{m}\nabla S\nabla a\right)= 0
+			\end{aligned}\right.
+		\end{equation}
+		We know that if the hamiltonian of the system, $\hat{H}$, is time-independent, then the solutions to the Shr\"odinger equation are in the form of $\Psi = a e ^ {-\frac{iE}{\hbar}t}$, which means that:
+		\begin{align}
+			\Psi = a e ^ {-\frac{iE}{\hbar}t} =& a(x, t)e^{\frac{i}{\hbar}S(x,t)} \\
+			S =& Et + S_0(x) \\
+			a(x, t) =& a(x)
+		\end{align}
+		and
+		\begin{equation}
+			\left\{\begin{aligned}
+				\frac{1}{2m}(\nabla S_0)^2 + U = E \\
+				\hbar\left(\frac{a}{2m}\Delta S_0 + \frac{1}{m}\nabla S_0\nabla a\right) = 0
+			\end{aligned}\right.
+		\end{equation}		
+		Because we are solving for a 1D case,
+		\begin{align}
+			\frac{1}{2m}\left(\frac{\partial S_0}{\partial x}\right)^2 =& E - U\\
+			\frac{\partial S_0}{\partial x} =& \sqrt{2m(E-U)}\\
+			S_0 =& \int_{a_0}^{x}\sqrt{2m(E-U)}dx
+		\end{align}	
+	
+		\begin{align}
+			\frac{a}{2m} \frac{\partial^2 S_0}{\partial x^2} + \frac{1}{m}\frac{\partial S_0}{\partial x}\frac{\partial a}{\partial x} =& 0 |\times a\\
+			\div\left(a^2 \frac{\nabla S_0}{m}\right) = 0, \quad \nabla S_0 = \sqrt{2m(E-U)} =& p \Rightarrow\\
+			\frac{a^2\nabla S_0}{m} = \frac{a^2p}{m} =& const \\
+			a^2p =& const \rightarrow \\
+			a =& \pm \frac{c}{\sqrt{p}}
+		\end{align}
+		Which gives us the final form of $\Psi$, where $c_1, c_2$ are normalization constants:
+		\begin{equation}
+			\Psi = \frac{c_1}{\sqrt{p}}\exp(\frac{i}{\hbar}\int_a^x pdx) + \frac{c_2}{\sqrt{p}}\exp(-\frac{i}{\hbar}\int_a^x pdx)
+		\end{equation}
+	
 	\subsection{Problems}
 		\subsubsection{Exponential potential}
 			\begin{figure}[!h]
