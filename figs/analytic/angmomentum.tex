@@ -1,0 +1,12 @@
+\tdplotsetmaincoords{80}{60}
+
+\begin{tikzpicture}[scale=5,tdplot_main_coords]
+\coordinate (O) at (0,0,0);
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$\vec{r}$};
+\draw[thick,->] (1,0,0) -- (1,0,1) node[anchor=south]{$\vec{p}$};
+\draw[thick,->] (0,0,0) -- (0,2,0) node[anchor=north west]{$\vec{L}$};
+
+\tdplotsetthetaplanecoords{0}
+\draw[dashed,tdplot_rotated_coords] (1,0,0) arc (0:360:1);
+
+\end{tikzpicture}
